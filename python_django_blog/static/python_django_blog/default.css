@@ -1,0 +1,33 @@
+body {
+    background-color: #87CEEB;
+}
+
+#header {
+  /*display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;*/
+  text-align: center;
+}
+
+.list {
+  display: block;
+  margin-top: 10px;
+}
+
+.list {
+  display: block;
+  margin-top: 10px;
+  list-style: none;
+}
+
+.list a {
+    text-decoration: none;
+    /* Undecided on the colour choice right now
+    /*color: #555;*/
+    color: #000080;
+}
+
+.list a:hover {
+    text-decoration: underline;
+}
