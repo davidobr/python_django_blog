@@ -12,6 +12,12 @@
     <div>
         <ul class="list">
             <li><a href="{% url 'home' %}">Home</a></li>
+            {% if request.user.is_anonymous %}
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+            {% else %}
+                <li><a href="#">Dashboard</a></li>
+            {% endif %}
         </ul>
     </div>
 </div>

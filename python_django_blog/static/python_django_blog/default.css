@@ -16,6 +16,10 @@ body {
   list-style: none;
 }
 
+.list li {
+    display: inline;
+}
+
 .list a {
     text-decoration: none;
     /* Undecided on the colour choice right now
