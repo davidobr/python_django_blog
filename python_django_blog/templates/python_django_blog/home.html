@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>{% block title %} Blog {% endblock %}</title>
+{% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="{% static 'python_django_blog/default.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div id="header" class="col-12 mx-auto">
+    <h1>Blog</h1>
+    <div>
+        <ul class="list">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            {% if request.user.is_anonymous %}
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+            {% else %}
+                <li><a href="#">Dashboard</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+<div>
+    <div id="blog-posts" class="col-10 col-lg-2 mx-auto mt-5 mx-auto align-items-center">
+        <p>Latest blog posts:</p>
+        <div class="card text-bg-primary mb-3">
+            <div class="card-header">
+                Test blog title
+            </div>
+            <div class="card-body">
+                <p class="card-text">A little bit of what content would be included</p>
+                <a href="#" class="card-text">View this post</a> <!-- link here will be dynamic -->
+                <!-- Will need to add logic to check if the user is the owner of the post,
+                 if so offer them a chance to edit from here, but also from the post
+                 <a href="#">Want to make changes to the meeting?</a>-->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
