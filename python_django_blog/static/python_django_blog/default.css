@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #87CEEB;
 }
@@ -19,6 +24,7 @@ body {
   display: block;
   margin-top: 10px;
   list-style: none;
+  width: 100%;
 }
 
 .list li {
@@ -44,4 +50,11 @@ a {
 
 a:active, a:hover {
     text-decoration: underline;
+}
+
+@media only screen and (max-width: 480px){
+    .list li {
+        display: inline;
+        margin: 0 20px;
+    }
 }
